@@ -17,7 +17,7 @@ before_action :authenticate_user!
 
 	def destroy
 		#ログインしているユーザーに紐付いたfavoritesの中からtweet_idが等しいものを１件取得
-        @favorite = current_user.favorites.find_by!(tweet_id: params[:tweets_id])
+        @favorite = current_user.favorites.find_by!(tweet_id: params[:tweet_id])
 		# destroyメソッドで削除
         @favorite.destroy
 		#  tweets#indexへリダイレクト
