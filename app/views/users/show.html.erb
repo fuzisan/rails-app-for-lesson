@@ -44,7 +44,7 @@
 		</div>
 
 		<!-- ユーザーに紐付いたツイートを取得し、eachメソッドでツイート分表示 -->
-
+		<% @users.each do |user| %>
 			<div class="list-group-item">
 				<h4 class="user">
 					<span class="user-name">
@@ -63,7 +63,7 @@
 					</p>
 				</div>
 			</div>
-
+			<% end %>
 		<!-- each終わり -->
 	</div>	
 </div>

@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'users/index'
+
+  get 'users/show'
+
   # deviseが自動生成するルーティング
   devise_for :users
   # ツイート一覧画面へのルーティングを定義

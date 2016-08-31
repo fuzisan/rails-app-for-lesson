@@ -22,7 +22,7 @@ class TweetsController < ApplicationController
     # 投稿したuser_idをtweetのuser_idカラムにセット　→　参照：「[railsブログを作ろう②]ユーザーとポストを紐付けよう！」
   @tweet.user_id = current_user.id
     # データベースへ保存する  →  参照：week2「データの保存、抽出」
-  @tweet.content=params[:body]
+  #@tweet.content=params[:body]
   @tweet.save
     # ツイート一覧へリダイレクト　→　参照：week2「コントローラーの様々なメソッドを学ぶ」
     redirect_to tweets_path
