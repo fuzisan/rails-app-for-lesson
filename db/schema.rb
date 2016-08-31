@@ -11,11 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160830055200) do
+ActiveRecord::Schema.define(version: 20160831071418) do
 
   create_table "favorites", force: :cascade do |t|
     t.integer  "user_id"
-    t.integer  "post_id"
+    t.integer  "tweet_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

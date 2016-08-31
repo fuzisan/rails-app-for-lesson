@@ -8,7 +8,7 @@
 		<% end %>
 		<span class="user-name">
 			<!-- ユーザーのemailを表示 -->
-			<%= current_user.username %>
+			<%= current_user.email %>
 		</span>
 	</div>
 	<ul class="nav nav-tabs nav-justified">
@@ -19,7 +19,7 @@
 				</div>
 				<div class="num">
 					<!-- ユーザーのツイートを数えて表示 -->
-
+					<%= Tweet.count(current_user.id) %>
 				</div>
 			<% end %>	
 		</li>		
@@ -31,7 +31,7 @@
 			</div>
 			<div class="num">
 				<!-- ユーザーのお気に入りを数えて表示 -->
-
+				<%= Tweet.count(favorites) %>
 			</div>
 		<% end %>
 		</li>
@@ -59,7 +59,7 @@
 				<div class="tweet-content">
 					<p>
 						<!-- ツイートのcontentを表示 -->
-
+						<%=user.tweets %>
 					</p>
 				</div>
 			</div>

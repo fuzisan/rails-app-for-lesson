@@ -83,15 +83,15 @@
               <!-- ↓お気に入りボタンの実装（発展課題） -->
               <div class="content-footer">
                 <!-- ↓favorited_by?を使ってif文でデータの状態によって表示するテキストを変えましょう -->
-                  <%# if t.favorited_by? current_user %>
+                  <%if t.favorited_by? current_user %>
 
                     <!-- ↓お気に入り解除ボタンの設置 -->
-                    <%#= link_to "お気に入りの解除", tweet_favorites_path(t), method: :delete %>
-                  <%#else %>
+                    <%= link_to "お気に入りの解除", tweet_favorites_path(t), method: :delete %>
+                  <%else %>
 
                     <!-- ↓お気に入り登録するボタンの設置 -->
-                    <%#= link_to "お気に入りの登録", tweet_favorites_path(t), method: :post %>
-                  <%#end %>
+                    <%= link_to "お気に入りの登録", tweet_favorites_path(t), method: :post %>
+                  <%end %>
                </div>
               <!-- ↑お気に入りボタンの実装（発展課題） -->
 
