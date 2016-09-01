@@ -8,9 +8,10 @@ class TweetsController < ApplicationController
     # allを使ってTweetの全レコードの取得しインスタンス変数に格納
     #@tweets = Tweet.all
       #→ ページングする場合は...  →  参照：「ページング機能を実装しよう」
-    @tweets = Tweet.page(params[:page]).per(10)
-        #→  並び順かえたい場合は...  →  「rails order」で検索
-              
+    #@tweets = Tweet.page(params[:page]).per(10)
+    #→  並び順かえたい場合は...  →  「rails order」で検索
+    @tweets = Tweet.order(created_at: :desc) .page(params[:page]).per(10)
+
     # form_forに渡すインスタンスを生成
     @tweet = Tweet.new
 
