@@ -50,7 +50,7 @@
 				<h4 class="user">
 					<span class="user-name">
 						<!-- link_toを使用しユーザーページへのリンクを作る（表示するテキストはemails） -->
-						<%#= link_to t.user.email, user_path(t) %>
+						<%= link_to @user.email, user_path(t.user_id) %>
 					</span>
 					<span class="time pull-right">
 						<%= distance_of_time_in_words_to_now(t.created_at) %>
