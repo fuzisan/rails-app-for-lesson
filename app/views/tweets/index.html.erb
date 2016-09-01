@@ -33,7 +33,8 @@
                   <div class="num">
                     <!-- ↓current_userのツイートの数を数える -->
                     <!-- わからなければ「rails count」で検索！ -->
-                    <%= Tweet.count(current_user.id) %>
+                    <%#= Tweet.count(current_user.id) %>
+                    <%= current_user.tweets.count %>
                   </div>
                 </div>
               </div>
