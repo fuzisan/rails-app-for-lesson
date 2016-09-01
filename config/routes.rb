@@ -1,25 +1,19 @@
 Rails.application.routes.draw do
- # get '/users' =>'users#index'
-  #get 'users/show'
-
   # deviseが自動生成するルーティング
   devise_for :users
   # ツイート一覧画面へのルーティングを定義
   resources :tweets
 
-# ---------------------------------------------
-# 発展課題
-  # resourcesを制限する場合
+  # resourcesを制限する
     resources :users, only: [:index, :show] do
       resource :favorites
     end
-# ---------------------------------------------
-  #お気に入り機能をツイートに紐付ける場合  
+  #お気に入り機能をツイートとuserに紐付ける
   resources :tweets do
     resource :favorites
+    resource :users
   end
 
 # ルートパス　でアクセスした時にツイート一覧へのルーティングを定義
 root 'tweets#index'
-
 end
