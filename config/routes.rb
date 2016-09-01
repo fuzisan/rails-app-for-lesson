@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
-  get 'users/index'
-
-  get 'users/show'
+ # get '/users' =>'users#index'
+  #get 'users/show'
 
   # deviseが自動生成するルーティング
   devise_for :users
@@ -11,8 +10,9 @@ Rails.application.routes.draw do
 # ---------------------------------------------
 # 発展課題
   # resourcesを制限する場合
-    # resources :users, only: [:index, :show] do
-    # end
+    resources :users, only: [:index, :show] do
+      resource :favorites
+    end
 # ---------------------------------------------
   #お気に入り機能をツイートに紐付ける場合  
   resources :tweets do
